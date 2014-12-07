@@ -50,7 +50,11 @@
     m -= Math.floor(m);
     var s = h * 360;
     s -= Math.floor(s);
-    document.getElementById('y').setAttribute('transform', 'rotate(' + (360 * y) + ' 320 320)');
+    var sr = t1.sunrise.getJulian();
+    var se = t1.sunriseEnd.getJulian();
+    var sn = t1.solarNoon.getJulian();
+    var ss = Math.abs(sn1 - (sr + (se - sr) / 2)) / Math.abs(sn - sn1);
+    document.getElementById('ss').setAttribute('offset', ss);
     document.getElementById('p').setAttribute('transform', 'rotate(' + (360 * p) + ' 320 320)');
     document.getElementById('h').setAttribute('transform', 'rotate(' + (360 * h) + ' 320 320)');
     document.getElementById('m').setAttribute('transform', 'rotate(' + (360 * m) + ' 320 320)');
@@ -82,6 +86,7 @@
  <defs>
    <linearGradient id="bg" x1="0%" y1="100%" x2="0%" y2="0%">
     <stop offset="0%" stop-color="#65b"/>
+    <stop id="ss" offset="50%" stop-color="#999"/>
     <stop offset="100%" stop-color="#df7"/>
    </linearGradient>
  </defs>
