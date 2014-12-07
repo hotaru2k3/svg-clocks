@@ -53,12 +53,12 @@
  <style>
   @font-face
   { font-family: "Noto Sans Symbols";
-    source: local("Noto Sans Symbols"), url("NotoSansSymbols-Regular.ttf"); }
+    src: local("Noto Sans Symbols"), url("NotoSansSymbols-Regular.ttf"); }
     
   text
   { dominant-baseline: central;
     text-anchor: middle;
-    font-family: "Noto Sans Symbols";
+    font-family: "Noto Sans Symbols", sans-serif;
     font-size: 80px;
     text-shadow: 0 0 5px #df7;
     stroke: #df7;
