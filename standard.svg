@@ -32,10 +32,14 @@
   setInterval(update, 1000/30); })();
  </script>
  <style>
+  @font-face
+  { font-family: "Noto Serif";
+    source: local("Noto Serif"), url("NotoSerif-Regular.ttf"); }
+    
   text
   { dominant-baseline: central;
     text-anchor: middle;
-    font-family: serif; }
+    font-family: "Noto Serif"; }
   .h
   { font-size: 40px;
     stroke: #000;
