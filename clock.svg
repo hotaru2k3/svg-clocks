@@ -1,0 +1,87 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN"
+	"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 640 640">
+ <script xlink:href="suncalc/suncalc.js"/>
+ <script xlink:href="https://www.google.com/jsapi"/>
+ <script xlink:href="http://www.google.com/jsapi"/>
+ <script>
+(function()
+{ Date.prototype.getJulian = function()
+  { return this.getTime() / 86400000 + 2440587.5; }
+
+  Date.prototype.stdTimezoneOffset = function()
+  { var jan = new Date(this.getFullYear(), 0, 1);
+    var jul = new Date(this.getFullYear(), 6, 1);
+    return Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset()); }
+
+  function update()
+  { var d = new Date();
+    var j = d.getJulian();
+    var p = SunCalc.getMoonIllumination(d).phase;
+    var Y1 = d.getFullYear();
+    var Y0 = Y1 - 1;
+    var Y2 = Y1 + 1;
+    var y1 = Y1 / 1000;
+    var y0 = Y0 / 1000;
+    var y2 = Y2 / 1000;
+    var so1 = 1721414.3920 + 365.2428898 * Y1 - 0.0109650 * y1 * y1 - 0.0084885 * y1 * y1 * y1;
+    var so0 = 1721414.3920 + 365.2428898 * Y0 - 0.0109650 * y0 * y0 - 0.0084885 * y0 * y0 * y0;
+    var so2 = 1721414.3920 + 365.2428898 * Y2 - 0.0109650 * y2 * y2 - 0.0084885 * y2 * y2 * y2;
+    if(j &#x3c; so1)
+    { so2 = so1;
+      so1 = so0; }
+    y = (j - so1) / (so2 - so1);
+    var d0 = new Date(d);
+    var d2 = new Date(d);
+    d0.setDate(d.getDate() - 1);
+    d2.setDate(d.getDate() + 1);
+    var t0 = SunCalc.getTimes(d0, pos.latitude, pos.longitude);
+    var t1 = SunCalc.getTimes(d, pos.latitude, pos.longitude);
+    var t2 = SunCalc.getTimes(d2, pos.latitude, pos.longitude);
+    var sn0 = t0.nadir.getJulian();
+    var sn1 = t1.nadir.getJulian();
+    var sn2 = t2.nadir.getJulian();
+    if(d.getTime() &#x3c; sn1)
+    { sn2 = sn1;
+      sn1 = sn0; }
+    var h = (j - sn1) / (sn2 - sn1);
+    var m = h * 4;
+    m -= Math.floor(m);
+    var s = h * 360;
+    s -= Math.floor(s);
+    document.getElementById('y').setAttribute('transform', 'rotate(' + (360 * y) + ' 320 320)');
+    document.getElementById('p').setAttribute('transform', 'rotate(' + (360 * p) + ' 320 320)');
+    document.getElementById('h').setAttribute('transform', 'rotate(' + (360 * h) + ' 320 320)');
+    document.getElementById('m').setAttribute('transform', 'rotate(' + (360 * m) + ' 320 320)');
+    document.getElementById('s').setAttribute('transform', 'rotate(' + (360 * s) + ' 320 320)');
+ }
+
+  var pos = { latitude: 0,
+              longitude: -(new Date()).stdTimezoneOffset() / 4 };
+  if(window.google &#x26;&#x26; google.loader &#x26;&#x26; google.loader.clientLocation)
+    pos = google.loader.clientLocation;
+  if(navigator.geolocation)
+    navigator.geolocation.watchPosition(function(p) { pos = p.coords; });
+
+  setInterval(update, 1000/30); })();
+ </script>
+ <defs>
+   <linearGradient id="bg" x1="0%" y1="100%" x2="0%" y2="0%">
+    <stop offset="0%" stop-color="#65b"/>
+    <stop offset="100%" stop-color="#df7"/>
+   </linearGradient>
+ </defs>
+ <circle cx="320" cy="320" r="300" fill="url(#bg)" stroke-width="10" stroke="#000"/>
+ <path id ="t" d="M 320 620 l 259.8 -450 h -519.6 Z" fill="none" stroke-width="10" stroke="#000" stroke-linejoin="bevel" opacity="0.125"/>
+ <use xlink:href="#t" transform="rotate(90 320 320)"/>
+ <use xlink:href="#t" transform="rotate(180 320 320)"/>
+ <use xlink:href="#t" transform="rotate(270 320 320)"/>
+ <circle cx="320" cy="320" r="300" fill="none" stroke-width="10" stroke="#000"/>
+ <line id="y" x1="320" y1="320" x2="320" y2="440" stroke-width="20" stroke="#f70"/>
+ <line id="p" x1="320" y1="320" x2="320" y2="480" stroke-width="15" stroke="#77f"/>
+ <line id="h" x1="320" y1="320" x2="320" y2="520" stroke-width="10" stroke="#000"/>
+ <line id="m" x1="320" y1="320" x2="320" y2="560" stroke-width="5" stroke="#000"/>
+ <line id="s" x1="320" y1="320" x2="320" y2="580" stroke-width="2" stroke="#f77"/>
+ <circle cx="320" cy="320" r="20" fill="#000"/>
+</svg>
