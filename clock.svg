@@ -55,6 +55,7 @@
     var sn = t1.solarNoon.getJulian();
     var ss = Math.abs(sn1 - (sr + (se - sr) / 2)) / Math.abs(sn - sn1);
     document.getElementById('ss').setAttribute('offset', ss);
+    document.getElementById('y').setAttribute('transform', 'rotate(' + (360 * y) + ' 320 320)');
     document.getElementById('p').setAttribute('transform', 'rotate(' + (360 * p) + ' 320 320)');
     document.getElementById('h').setAttribute('transform', 'rotate(' + (360 * h) + ' 320 320)');
     document.getElementById('m').setAttribute('transform', 'rotate(' + (360 * m) + ' 320 320)');
