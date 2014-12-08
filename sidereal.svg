@@ -4,18 +4,11 @@
   viewBox="0 0 640 640">
  <script xlink:href="https://www.google.com/jsapi"/>
  <script xlink:href="http://www.google.com/jsapi"/>
+ <script xlink:href="pos.js"/>
  <script>
 (function()
 { Date.prototype.getJulian = function()
   { return this.getTime() / 86400000 + 2440587.5; }
-
-  Date.prototype.stdTimezoneOffset = function()
-  { var jan = new Date(this.getFullYear(), 0, 1);
-    var jul = new Date(this.getFullYear(), 6, 1);
-    return Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset()); }
-
-  Date.prototype.dst = function()
-  { return this.getTimezoneOffset() &#x3c; this.stdTimezoneOffset(); }
 
   function update()
   { var d = new Date();
@@ -40,13 +33,6 @@
     document.getElementById('m').setAttribute('transform', 'rotate(' + (360 * m) + ' 320 320)');
     document.getElementById('s').setAttribute('transform', 'rotate(' + (360 * s) + ' 320 320)');
  }
-
-  var pos = { latitude: 0,
-              longitude: -(new Date()).stdTimezoneOffset() / 4 };
-  if(window.google &#x26;&#x26; google.loader &#x26;&#x26; google.loader.clientLocation)
-    pos = google.loader.clientLocation;
-  if(navigator.geolocation)
-    navigator.geolocation.watchPosition(function(p) { pos = p.coords; });
 
   setInterval(update, 1000/30); })();
  </script>
