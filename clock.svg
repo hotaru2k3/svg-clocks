@@ -11,6 +11,8 @@
 { Date.prototype.getJulian = function()
   { return this.getTime() / 86400000 + 2440587.5; }
 
+  var oss = 0;
+
   function update()
   { var d = new Date();
     var j = d.getJulian();
@@ -50,7 +52,9 @@
     var se = t1.sunriseEnd.getJulian();
     var sn = t1.solarNoon.getJulian();
     var ss = Math.abs(sn1 - (sr + (se - sr) / 2)) / Math.abs(sn - sn1);
-    document.getElementById('ss').setAttribute('offset', ss);
+    if(ss != oss)
+      document.getElementById('ss').setAttribute('offset', ss);
+    oss = ss;
     document.getElementById('y').setAttribute('transform', 'rotate(' + (360 * y) + ' 320 320)');
     document.getElementById('p').setAttribute('transform', 'rotate(' + (360 * p) + ' 320 320)');
     document.getElementById('h').setAttribute('transform', 'rotate(' + (360 * h) + ' 320 320)');
