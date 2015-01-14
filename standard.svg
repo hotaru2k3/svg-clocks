@@ -3,6 +3,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   viewBox="0 0 640 640">
  <script>
+var omo = -1;
 (function()
 { function update()
   { var md = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
@@ -14,13 +15,14 @@
     var yr = d.getFullYear();
     if(!(y%400) || (!(y%4) &#x26;&#x26; (y%100))) md[1] = 29;
     var mo = d.getMonth();
-    for(i = 0; i &#x3c; 31; ++i)
+    if(mo != omo) for(i = 0; i &#x3c; 31; ++i)
     { var a = 180 + 360 * i / md[mo];
       if(a > 360) a -= 360;
       a = Math.round(a * 10) / 10;
       var e = document.getElementById('mo' + i);
       e.style.display = md[mo] > i ? 'inline' : 'none';
       e.setAttribute('transform', 'rotate(' + a + ' 320 320)'); }
+    omo = mo;
     var p = (d.getDate() - 1 + h) / md[mo];
     var y = (mo + p) / 12;
     document.getElementById('y').setAttribute('transform', 'rotate(' + (360 * y) + ' 320 320)');
