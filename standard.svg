@@ -18,7 +18,9 @@
     { var a = 180 + 360 * i / md[mo];
       if(a > 360) a -= 360;
       a = Math.round(a * 10) / 10;
-      document.getElementById('mo' + i).setAttribute('transform', 'rotate(' + a + ' 320 320)'); }
+      var e = document.getElementById('mo' + i);
+      e.style.display = md[mo] > i ? 'inline' : 'none';
+      e.setAttribute('transform', 'rotate(' + a + ' 320 320)'); }
     var p = (d.getDate() - 1 + h) / md[mo];
     var y = (mo + p) / 12;
     document.getElementById('y').setAttribute('transform', 'rotate(' + (360 * y) + ' 320 320)');
