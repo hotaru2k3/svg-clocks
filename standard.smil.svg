@@ -2,6 +2,34 @@
   version="1.1"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   viewBox="0 0 640 640">
+ <script>
+(function()
+{ function update()
+  { var d = new Date();
+    var s = (d.getSeconds() + d.getMilliseconds() / 1000) / 60;
+    var m = (d.getMinutes() + s) / 60;
+    var h = (d.getHours() + m) / 24;
+    var w = (d.getDay() + h) / 7;
+    document.getElementById('w').getElementsByTagName('animateTransform')[0].setAttribute(
+      'from', (360 * w) + ' 320 320');
+    document.getElementById('w').getElementsByTagName('animateTransform')[0].setAttribute(
+      'to', (360 + 360 * w) + ' 320 320');
+    document.getElementById('h').getElementsByTagName('animateTransform')[0].setAttribute(
+      'from', (360 * h) + ' 320 320');
+    document.getElementById('h').getElementsByTagName('animateTransform')[0].setAttribute(
+      'to', (360 + 360 * h) + ' 320 320');
+    document.getElementById('m').getElementsByTagName('animateTransform')[0].setAttribute(
+      'from', (360 * m) + ' 320 320');
+    document.getElementById('m').getElementsByTagName('animateTransform')[0].setAttribute(
+      'to', (360 + 360 * m) + ' 320 320');
+    document.getElementById('s').getElementsByTagName('animateTransform')[0].setAttribute(
+      'from', (360 * s) + ' 320 320');
+    document.getElementById('s').getElementsByTagName('animateTransform')[0].setAttribute(
+      'to', (360 + 360 * s) + ' 320 320');
+ }
+
+  window.onload = update; })();
+ </script>
  <style>
   @font-face
   { font-family: "Noto Serif";
@@ -93,7 +121,7 @@
  <text class="w" x="320" y="120" transform="rotate(231.4 320 320)">MON</text>
  <text class="w" x="320" y="120" transform="rotate(282.9 320 320)">TUE</text>
  <text class="w" x="320" y="120" transform="rotate(334.3 320 320)">WED</text>
- <line x1="320" y1="320" x2="320" y2="500" stroke-width="12" stroke="#777">
+ <line id="w" x1="320" y1="320" x2="320" y2="500" stroke-width="12" stroke="#777">
   <animateTransform
     attributeName="transform"
     attributeType="XML"
@@ -103,7 +131,7 @@
     dur="168h"
     repeatCount="indefinite"/>
  </line>
- <line x1="320" y1="320" x2="320" y2="520" stroke-width="10" stroke="#000">
+ <line id="h" x1="320" y1="320" x2="320" y2="520" stroke-width="10" stroke="#000">
   <animateTransform
     attributeName="transform"
     attributeType="XML"
@@ -113,7 +141,7 @@
     dur="24h"
     repeatCount="indefinite"/>
  </line>
- <line x1="320" y1="320" x2="320" y2="560" stroke-width="5" stroke="#000">
+ <line id="m" x1="320" y1="320" x2="320" y2="560" stroke-width="5" stroke="#000">
   <animateTransform
     attributeName="transform"
     attributeType="XML"
@@ -123,7 +151,7 @@
     dur="1h"
     repeatCount="indefinite"/>
  </line>
- <line x1="320" y1="320" x2="320" y2="580" stroke-width="2" stroke="#f77">
+ <line id="s" x1="320" y1="320" x2="320" y2="580" stroke-width="2" stroke="#f77">
   <animateTransform
     attributeName="transform"
     attributeType="XML"
