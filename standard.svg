@@ -29,7 +29,11 @@
     document.getElementById('s').setAttribute('transform', 'rotate(' + (360 * s) + ' 320 320)');
  }
 
-  setInterval(update, 1000/30); })();
+  function updateLoop()
+  { update();
+    requestAnimationFrame(updateLoop); }
+
+  window.onload = updateLoop; })();
  </script>
  <style>
   @font-face
