@@ -7,23 +7,14 @@
   { font-family: "Noto Serif";
     src: local("Noto Serif"), url("NotoSerif-Regular.ttf"); }
 
-  @keyframes w
-  {   0% { transform: rotate(  0   ); }
-    100% { transform: rotate(360deg); }}
-  @keyframes h
-  {   0% { transform: rotate(  0   ); }
-    100% { transform: rotate(360deg); }}
-  @keyframes m
-  {   0% { transform: rotate(  0   ); }
-    100% { transform: rotate(360deg); }}
-  @keyframes s
+  @keyframes a
   {   0% { transform: rotate(  0   ); }
     100% { transform: rotate(360deg); }}
 
-  #w { transform-origin: top center; animation: w 604800s linear; }
-  #h { transform-origin: top center; animation: w 86400s linear; }
-  #m { transform-origin: top center; animation: w 3600s linear; }
-  #s { transform-origin: top center; animation: w 60s linear; }
+  #w { transform-origin: top center; animation: a 604800s linear; }
+  #h { transform-origin: top center; animation: a 86400s linear; }
+  #m { transform-origin: top center; animation: a 3600s linear; }
+  #s { transform-origin: top center; animation: a 60s linear; }
     
   text
   { dominant-baseline: central;
