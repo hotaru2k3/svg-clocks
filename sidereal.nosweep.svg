@@ -1,0 +1,81 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN"
+	"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 640 640">
+ <script xlink:href="https://www.google.com/jsapi"/>
+ <script xlink:href="http://www.google.com/jsapi"/>
+ <script xlink:href="pos.js"/>
+ <script>
+(function()
+{ Date.prototype.getJulian = function()
+  { return this.getTime() / 86400000 + 2440587.5; }
+
+  function update()
+  { var d = new Date();
+    var e = new Date(0);
+    e.setUTCFullYear(2000);
+    e.setUTCHours(12);
+    var j = d.getJulian() - e.getJulian();
+    var y = (j - 82.3075) / 365.256363004;
+    y -= Math.floor(y);
+    var p = (j - 11.283) / 27.321661;
+    p -= Math.floor(p);
+    g = 0.77905727325 + 1.002737909350795 * j;
+    var h = g + (pos.longitude / 360);
+    h -= Math.floor(h);
+    var m = h * 24;
+    m -= Math.floor(m);
+    var s = h * 1440;
+    s -= Math.floor(s);
+    s = Math.floor(120 * s) / 120;
+    document.getElementById('y').setAttribute('transform', 'rotate(' + (360 * y) + ' 320 320)');
+    document.getElementById('p').setAttribute('transform', 'rotate(' + (360 * p) + ' 320 320)');
+    document.getElementById('h').setAttribute('transform', 'rotate(' + (360 * h) + ' 320 320)');
+    document.getElementById('m').setAttribute('transform', 'rotate(' + (360 * m) + ' 320 320)');
+    document.getElementById('s').setAttribute('transform', 'rotate(' + (360 * s) + ' 320 320)');
+ }
+
+  function updateLoop()
+  { setInterval(update, 1000); }
+
+  window.onload = updateLoop; })();
+ </script>
+ <style>
+  @font-face
+  { font-family: "Noto Sans Symbols";
+    src: local("Noto Sans Symbols"), url("NotoSansSymbols-Regular.ttf"); }
+    
+  text
+  { dominant-baseline: central;
+    text-anchor: middle;
+    font-family: "Noto Sans Symbols", sans-serif;
+    font-size: 80px;
+    text-shadow: 0 0 5px #df7;
+    stroke: #df7;
+    fill: #df7;
+    fill-opacity: 0.125; }
+ </style>
+ <circle cx="320" cy="320" r="300" fill="#65b" stroke-width="10" stroke="#000"/>
+ <text x="320" y="80">&#x264e;</text>
+ <text x="560" y="320">&#x2651;</text>
+ <text x="320" y="560">&#x2648;</text>
+ <text x="80" y="320">&#x264b;</text>
+ <g transform="rotate(30 320 320)">
+  <text x="320" y="80">&#x264f;</text>
+  <text x="560" y="320">&#x2652;</text>
+  <text x="80" y="320">&#x264c;</text>
+  <text x="320" y="560">&#x2649;</text>
+ </g>
+ <g transform="rotate(-30 320 320)">
+  <text x="560" y="320">&#x2650;</text>
+  <text x="320" y="560">&#x2653;</text>
+  <text x="80" y="320">&#x264a;</text>
+  <text x="320" y="80">&#x264d;</text>
+ </g>
+ <line id="y" x1="320" y1="320" x2="320" y2="440" stroke-width="20" stroke="#f70"/>
+ <line id="p" x1="320" y1="320" x2="320" y2="480" stroke-width="15" stroke="#77f"/>
+ <line id="h" x1="320" y1="320" x2="320" y2="520" stroke-width="10" stroke="#000"/>
+ <line id="m" x1="320" y1="320" x2="320" y2="560" stroke-width="5" stroke="#000"/>
+ <line id="s" x1="320" y1="320" x2="320" y2="580" stroke-width="2" stroke="#f77"/>
+ <circle cx="320" cy="320" r="20" fill="#000"/>
+</svg>
