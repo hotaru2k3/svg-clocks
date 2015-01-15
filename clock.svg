@@ -44,7 +44,7 @@
     { sn2 = sn1;
       sn1 = sn0; }
     var h = (j - sn1) / (sn2 - sn1);
-    var m = h * 4;
+    var m = h * 12;
     m -= Math.floor(m);
     var s = h * 360;
     s -= Math.floor(s);
