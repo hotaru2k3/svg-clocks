@@ -68,19 +68,6 @@
 
   window.onload = updateLoop; })();
  </script>
- <style>
-  @font-face
-  { font-family: "Noto Serif";
-    src: local("Noto Serif"), url("NotoSerif-Regular.ttf"); }
-    
-  text
-  { dominant-baseline: central;
-    text-anchor: middle;
-    font-family: "Noto Serif", sans-serif;
-    font-size: 80px;
-    stroke: #000;
-    fill: #000; }
- </style>
  <defs>
    <linearGradient id="bg" x1="0%" y1="100%" x2="0%" y2="0%">
     <stop offset="0%" stop-color="#65b"/>
@@ -94,10 +81,6 @@
  <use xlink:href="#t" transform="rotate(180 320 320)"/>
  <use xlink:href="#t" transform="rotate(270 320 320)"/>
  <circle cx="320" cy="320" r="300" fill="none" stroke-width="10" stroke="#000"/>
- <text x="320" y="80">&#x662;</text>
- <text x="560" y="320">&#x663;</text>
- <text x="320" y="560">&#x660;</text>
- <text x="80" y="320">&#x661;</text>
  <line id="y" x1="320" y1="320" x2="320" y2="440" stroke-width="20" stroke="#f70"/>
  <line id="p" x1="320" y1="320" x2="320" y2="480" stroke-width="15" stroke="#77f"/>
  <line id="h" x1="320" y1="320" x2="320" y2="520" stroke-width="10" stroke="#000"/>
