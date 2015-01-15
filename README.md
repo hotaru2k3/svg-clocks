@@ -19,4 +19,3 @@ a few observations:
 * css and smil animations do play when the svg is loaded in an img tag, while javascript animations don't.
 * a lot of things that are easy to do in javascript are impossible in smil and css.
 * combining javascript with smil is a lot easier than combining javascript with css.
-* the second hand in sidereal.smil.svg runs twice as fast as it should, and i can't figure out why. i fixed it by just doubling the duration of the animation.

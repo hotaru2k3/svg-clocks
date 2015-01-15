@@ -25,7 +25,7 @@
     h -= Math.floor(h);
     var m = h * 24;
     m -= Math.floor(m);
-    var s = h * 720;
+    var s = h * 1440;
     s -= Math.floor(s);
     document.getElementById('y').getElementsByTagName('animateTransform')[0].setAttribute(
       'from', (360 * y) + ' 320 320');
@@ -133,7 +133,7 @@
     type="rotate"
     from="0 320 320"
     to="360 320 320"
-    dur="119.672348s"
+    dur="59.836174s"
     repeatCount="indefinite"/>
  </line>
  <circle cx="320" cy="320" r="20" fill="#000"/>

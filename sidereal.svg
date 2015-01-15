@@ -25,7 +25,7 @@
     h -= Math.floor(h);
     var m = h * 24;
     m -= Math.floor(m);
-    var s = h * 720;
+    var s = h * 1440;
     s -= Math.floor(s);
     document.getElementById('y').setAttribute('transform', 'rotate(' + (360 * y) + ' 320 320)');
     document.getElementById('p').setAttribute('transform', 'rotate(' + (360 * p) + ' 320 320)');
