@@ -17,6 +17,16 @@
   { var d = new Date();
     var j = d.getJulian();
     var p = SunCalc.getMoonIllumination(d).phase;
+    var Y = d.getFullYear() + 3561;
+    var digits = ['𒑊','𒁹','𒈫','𒐈','𒐉','𒐊','𒐋','𒐌','𒐍','𒐎',
+                  '𒌋','𒌋𒁹','𒌋𒈫','𒌋𒐈','𒌋𒐉','𒌋𒐊','𒌋𒐋','𒌋𒐌','𒌋𒐍','𒌋𒐎',
+                  '𒌋𒌋','𒌋𒌋𒁹','𒌋𒌋𒈫','𒌋𒌋𒐈','𒌋𒌋𒐉','𒌋𒌋𒐊','𒌋𒌋𒐋','𒌋𒌋𒐌','𒌋𒌋𒐍','𒌋𒌋𒐎',
+                  '𒌍','𒌍𒁹','𒌍𒈫','𒌍𒐈','𒌍𒐉','𒌍𒐊','𒌍𒐋','𒌍𒐌','𒌍𒐍','𒌍𒐎',
+                  '𒐏','𒐏𒁹','𒐏𒈫','𒐏𒐈','𒐏𒐉','𒐏𒐊','𒐏𒐋','𒐏𒐌','𒐏𒐍','𒐏𒐎',
+                  '𒐐','𒐐𒁹','𒐐𒈫','𒐐𒐈','𒐐𒐉','𒐐𒐊','𒐐𒐋','𒐐𒐌','𒐐𒐍','𒐐𒐎'];
+    var ys = '';
+    for(var i = Y; i; i = Math.floor(i / 60)) ys = digits[i % 60] + ys;
+    document.getElementById('ys').innerHTML = ys;
     var Y1 = d.getFullYear();
     var Y0 = Y1 - 1;
     var Y2 = Y1 + 1;
@@ -81,6 +91,7 @@
  <use xlink:href="#t" transform="rotate(180 320 320)"/>
  <use xlink:href="#t" transform="rotate(270 320 320)"/>
  <circle cx="320" cy="320" r="300" fill="none" stroke-width="10" stroke="#000"/>
+ <text id="ys" x="320" y="260" text-anchor="middle" font-size="48" fill="#700"/>
  <line id="y" x1="320" y1="320" x2="320" y2="440" stroke-width="20" stroke="#f70"/>
  <line id="p" x1="320" y1="320" x2="320" y2="480" stroke-width="15" stroke="#77f"/>
  <line id="h" x1="320" y1="320" x2="320" y2="520" stroke-width="10" stroke="#000"/>

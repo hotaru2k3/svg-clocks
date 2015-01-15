@@ -3,10 +3,6 @@
   xmlns:xlink="http://www.w3.org/1999/xlink"
   viewBox="0 0 640 640">
  <style>
-  @font-face
-  { font-family: "Noto Serif";
-    src: local("Noto Serif"), url("NotoSerif-Regular.ttf"); }
-
   @keyframes a
   {   0% { transform: rotate(  0   ); }
     100% { transform: rotate(360deg); }}
@@ -19,7 +15,7 @@
   text
   { dominant-baseline: central;
     text-anchor: middle;
-    font-family: "Noto Serif", serif; }
+    font-family: serif; }
   .h
   { font-size: 40px;
     stroke: #000;

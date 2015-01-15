@@ -31,14 +31,10 @@
   window.onload = update; })();
  </script>
  <style>
-  @font-face
-  { font-family: "Noto Serif";
-    src: local("Noto Serif"), url("NotoSerif-Regular.ttf"); }
-    
   text
   { dominant-baseline: central;
     text-anchor: middle;
-    font-family: "Noto Serif", serif; }
+    font-family: serif; }
   .h
   { font-size: 40px;
     stroke: #000;
