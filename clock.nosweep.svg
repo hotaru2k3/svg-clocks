@@ -48,7 +48,7 @@
     m -= Math.floor(m);
     var s = h * 360;
     s -= Math.floor(s);
-    s = Math.floor(240 * s) / 240;
+    s = Math.floor(120 * s) / 120;
     var sr = t1.sunrise.getJulian();
     var se = t1.sunriseEnd.getJulian();
     var sn = t1.solarNoon.getJulian();
@@ -64,7 +64,7 @@
  }
 
   function updateLoop()
-  { setInterval(update, 1000); }
+  { setInterval(update, 2000); }
 
   window.onload = updateLoop; })();
  </script>
