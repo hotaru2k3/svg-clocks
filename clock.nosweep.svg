@@ -25,7 +25,6 @@
                   '𒐏','𒐏𒁹','𒐏𒈫','𒐏𒐈','𒐏𒐉','𒐏𒐊','𒐏𒐋','𒐏𒐌','𒐏𒐍','𒐏𒐎',
                   '𒐐','𒐐𒁹','𒐐𒈫','𒐐𒐈','𒐐𒐉','𒐐𒐊','𒐐𒐋','𒐐𒐌','𒐐𒐍','𒐐𒐎'];
     var M = Math.floor((j - 2451545) / 29.53059 + 71244.816873)
-    document.getElementById('yn').innerHTML = Y;
     document.getElementById('mn').innerHTML = M;
     var ms = '';
     for(var i = M; i; i = Math.floor(i / 60)) ms = digits[i % 60] + ms;
@@ -41,6 +40,7 @@
     var so0 = 1721414.3920 + 365.2428898 * Y0 - 0.0109650 * y0 * y0 - 0.0084885 * y0 * y0 * y0;
     var so2 = 1721414.3920 + 365.2428898 * Y2 - 0.0109650 * y2 * y2 - 0.0084885 * y2 * y2 * y2;
     if(j &#x3c; so1 - 273.931642275) --Y;
+    document.getElementById('yn').innerHTML = Y;
     for(var i = Y; i; i = Math.floor(i / 60)) ys = digits[i % 60] + ys;
     document.getElementById('ys').innerHTML = ys;
     if(j &#x3c; so1)
