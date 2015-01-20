@@ -25,6 +25,8 @@
                   '𒐏','𒐏𒁹','𒐏𒈫','𒐏𒐈','𒐏𒐉','𒐏𒐊','𒐏𒐋','𒐏𒐌','𒐏𒐍','𒐏𒐎',
                   '𒐐','𒐐𒁹','𒐐𒈫','𒐐𒐈','𒐐𒐉','𒐐𒐊','𒐐𒐋','𒐐𒐌','𒐐𒐍','𒐐𒐎'];
     var M = Math.floor((j - 2451545) / 29.53059 + 71244.816873)
+    document.getElementById('yn').innerHTML = Y;
+    document.getElementById('mn').innerHTML = M;
     var ms = '';
     for(var i = M; i; i = Math.floor(i / 60)) ms = digits[i % 60] + ms;
     document.getElementById('ms').innerHTML = ms;
@@ -96,8 +98,10 @@
  <use xlink:href="#t" transform="rotate(180 320 320)"/>
  <use xlink:href="#t" transform="rotate(270 320 320)"/>
  <circle cx="320" cy="320" r="300" fill="none" stroke-width="10" stroke="#000"/>
- <text id="ys" x="320" y="260" text-anchor="middle" font-size="48" fill="#700"/>
- <text id="ms" x="320" y="420" text-anchor="middle" font-size="48" fill="#007"/>
+ <text id="ys" x="320" y="160" text-anchor="middle" font-size="48" fill="#700"/>
+ <text id="ms" x="320" y="520" text-anchor="middle" font-size="48" fill="#007"/>
+ <text id="yn" x="320" y="100" text-anchor="middle" font-size="24" fill="#700"/>
+ <text id="mn" x="320" y="550" text-anchor="middle" font-size="24" fill="#007"/>
  <line id="y" x1="320" y1="320" x2="320" y2="440" stroke-width="20" stroke="#f70"/>
  <line id="p" x1="320" y1="320" x2="320" y2="480" stroke-width="15" stroke="#77f"/>
  <line id="h" x1="320" y1="320" x2="320" y2="520" stroke-width="10" stroke="#000"/>
