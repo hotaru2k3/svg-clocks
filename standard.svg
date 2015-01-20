@@ -170,7 +170,7 @@ var omo = -1;
  <text class="y" x="320" y="160" transform="rotate(270 320 320)">APR</text>
  <text class="y" x="320" y="160" transform="rotate(300 320 320)">MAY</text>
  <text class="y" x="320" y="160" transform="rotate(330 320 320)">JUN</text>
- <text id="ys" x="320" y="260" text-anchor="middle" font-size="48" fill="#700"/>
+ <text id="ys" x="320" y="190" text-anchor="middle" font-size="48" fill="#700"/>
  <line id="y" x1="320" y1="320" x2="320" y2="440" stroke-width="20" stroke="#f70"/>
  <line id="p" x1="320" y1="320" x2="320" y2="480" stroke-width="15" stroke="#77f"/>
  <line id="w" x1="320" y1="320" x2="320" y2="500" stroke-width="12" stroke="#777"/>
