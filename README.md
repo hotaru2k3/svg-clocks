@@ -1,6 +1,6 @@
 various svg clocks.
 
-clock.svg: tropical year, synodic month, solar day. animated with javascript.
+clock.svg: galactic year, tropical year, synodic month, solar day. animated with javascript.
 
 clock.nosweep.svg: same as clock.svg, but without sweep second hand.
 
