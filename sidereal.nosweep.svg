@@ -17,6 +17,8 @@
     e.setUTCHours(12);
     var j = d.getJulian() - e.getJulian();
     var y = (j - 82.3075) / 365.256363004;
+    var G = y / 25770.2735426;
+    G -= Math.floor(G);
     y -= Math.floor(y);
     var p = (j - 11.283) / 27.321661;
     p -= Math.floor(p);
@@ -28,6 +30,7 @@
     var s = h * 1440;
     s -= Math.floor(s);
     s = Math.floor(120 * s) / 120;
+    document.getElementById('g').setAttribute('transform', 'rotate(' + (360 * G) + ' 320 320)');
     document.getElementById('y').setAttribute('transform', 'rotate(' + (360 * y) + ' 320 320)');
     document.getElementById('p').setAttribute('transform', 'rotate(' + (360 * p) + ' 320 320)');
     document.getElementById('h').setAttribute('transform', 'rotate(' + (360 * h) + ' 320 320)');
@@ -67,6 +70,7 @@
   <text x="80" y="320">&#x264a;</text>
   <text x="320" y="80">&#x264d;</text>
  </g>
+ <line id="g" x1="320" y1="320" x2="320" y2="400" stroke-width="20" stroke="#777"/>
  <line id="y" x1="320" y1="320" x2="320" y2="440" stroke-width="20" stroke="#f70"/>
  <line id="p" x1="320" y1="320" x2="320" y2="480" stroke-width="15" stroke="#77f"/>
  <line id="h" x1="320" y1="320" x2="320" y2="520" stroke-width="10" stroke="#000"/>

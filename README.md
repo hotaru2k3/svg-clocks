@@ -4,11 +4,11 @@ clock.svg: galactic year, tropical year, synodic month, solar day. animated with
 
 clock.nosweep.svg: same as clock.svg, but without sweep second hand.
 
-sidereal.svg: sidereal year, month, and day. animated with javascript.
+sidereal.svg: [great year](https://en.wikipedia.org/wiki/Great_Year), sidereal year, month, and day. animated with javascript.
 
 sidereal.nosweep.svg: same as sidereal.svg, but without sweep second hand.
 
-sidereal.smil.svg: sidereal year, month, and day. initialized with javascript and animated with smil.
+sidereal.smil.svg: same as sidereal.svg, but initialized with javascript and animated with smil.
 
 standard.svg: "standard" 24-hour clock with noon at the bottom, date, and day of week. animated with javascript.
 
