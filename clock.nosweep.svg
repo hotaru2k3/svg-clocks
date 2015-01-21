@@ -24,6 +24,8 @@
                   '𒌍','𒌍𒁹','𒌍𒈫','𒌍𒐈','𒌍𒐉','𒌍𒐊','𒌍𒐋','𒌍𒐌','𒌍𒐍','𒌍𒐎',
                   '𒐏','𒐏𒁹','𒐏𒈫','𒐏𒐈','𒐏𒐉','𒐏𒐊','𒐏𒐋','𒐏𒐌','𒐏𒐍','𒐏𒐎',
                   '𒐐','𒐐𒁹','𒐐𒈫','𒐐𒐈','𒐐𒐉','𒐐𒐊','𒐐𒐋','𒐐𒐌','𒐐𒐍','𒐐𒐎'];
+    var g = (d.getFullYear() - 2000) / 227599158 + 0.4;
+    while(g > 1) g -= 1;
     var M = Math.floor((j - 2451545) / 29.53059 + 71244.816873)
     document.getElementById('mn').innerHTML = M;
     var ms = '';
@@ -73,6 +75,7 @@
     if(ss != oss)
       document.getElementById('ss').setAttribute('offset', ss);
     oss = ss;
+    document.getElementById('g').setAttribute('transform', 'rotate(' + (360 * g) + ' 320 320)');
     document.getElementById('y').setAttribute('transform', 'rotate(' + (360 * y) + ' 320 320)');
     document.getElementById('p').setAttribute('transform', 'rotate(' + (360 * p) + ' 320 320)');
     document.getElementById('h').setAttribute('transform', 'rotate(' + (360 * h) + ' 320 320)');
@@ -102,6 +105,7 @@
  <text id="ms" x="320" y="520" text-anchor="middle" font-size="48" fill="#007"/>
  <text id="yn" x="320" y="100" text-anchor="middle" font-size="24" fill="#700"/>
  <text id="mn" x="320" y="550" text-anchor="middle" font-size="24" fill="#007"/>
+ <line id="g" x1="320" y1="320" x2="320" y2="400" stroke-width="25" stroke="#777"/>
  <line id="y" x1="320" y1="320" x2="320" y2="440" stroke-width="20" stroke="#f70"/>
  <line id="p" x1="320" y1="320" x2="320" y2="480" stroke-width="15" stroke="#77f"/>
  <line id="h" x1="320" y1="320" x2="320" y2="520" stroke-width="10" stroke="#000"/>
