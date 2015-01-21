@@ -43,18 +43,10 @@
   { font-size: 20px;
     stroke: #000;
     fill : #000; }
-  .mo
-  { font-size: 20px;
-    stroke: #77f;
-    fill : #77f; }
   .w
   { font-size: 15px;
     stroke: #777;
     fill: #777; }
-  .y
-  { font-size: 15px;
-    stroke: #f70;
-    fill: #f70; }
   #t line
   { stroke-width: 3px;
     stroke: #000; }
