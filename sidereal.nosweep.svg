@@ -39,7 +39,7 @@
  }
 
   function updateLoop()
-  { setInterval(update, 1000); }
+  { setInterval(update, 997); }
 
   window.onload = updateLoop; })();
  </script>
