@@ -3,8 +3,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   viewBox="0 0 640 640">
  <script xlink:href="suncalc/suncalc.js"/>
- <script xlink:href="https://www.google.com/jsapi"/>
+ <!--
  <script xlink:href="//www.google.com/jsapi"/>
+ -->
  <script xlink:href="pos.js"/>
  <script>
 (function()
