@@ -6,7 +6,7 @@
  <!--
  <script xlink:href="//www.google.com/jsapi"/>
  -->
- <script xlink:href="pos.js"/>
+ <script xlink:href="pos.min.js"/>
  <script>
 (function()
 { Date.prototype.getJulian = function()
