@@ -1,5 +1,6 @@
 (function()
-{ var d = new Date();
+{ 'use strict';
+  var d = new Date();
   var jan = new Date(d.getFullYear(), 0, 1).getTimezoneOffset();
   var jul = new Date(d.getFullYear(), 6, 1).getTimezoneOffset();
 

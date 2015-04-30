@@ -9,7 +9,8 @@
  -->
  <script>
 (function()
-{ Date.prototype.getJulian = function()
+{ 'use strict';
+  Date.prototype.getJulian = function()
   { return this.getTime() / 86400000 + 2440587.5; }
 
   var oss = 0;
@@ -49,7 +50,7 @@
     if(j &#x3c; so1)
     { so2 = so1;
       so1 = so0; }
-    y = (j - so1) / (so2 - so1);
+    var y = (j - so1) / (so2 - so1);
     var d0 = new Date(d);
     var d2 = new Date(d);
     d0.setDate(d.getDate() - 1);

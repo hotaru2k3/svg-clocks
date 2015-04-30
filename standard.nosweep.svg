@@ -3,9 +3,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   viewBox="0 0 640 640">
  <script>
-var omo = -1;
 (function()
-{ function update()
+{ 'use strict';
+  var omo = -1;
+  function update()
   { var md = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
     var d = new Date();
     var s = d.getSeconds() / 60;
@@ -15,7 +16,7 @@ var omo = -1;
     var yr = d.getFullYear();
     if(!(yr%400) || (!(yr%4) &#x26;&#x26; (yr%100))) md[1] = 29;
     var mo = d.getMonth();
-    if(mo != omo) for(i = 0; i &#x3c; 31; ++i)
+    if(mo != omo) for(var i = 0; i &#x3c; 31; ++i)
     { var a = 180 + 360 * i / md[mo];
       if(a &#x3e; 360) a -= 360;
       a = Math.round(a * 10) / 10;

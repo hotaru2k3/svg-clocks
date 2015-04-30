@@ -4,7 +4,8 @@
   viewBox="0 0 640 640">
  <script>
 (function()
-{ function update()
+{ 'use strict';
+  function update()
   { var d = new Date();
     var s = (d.getSeconds() + d.getMilliseconds() / 1000) / 60;
     var m = (d.getMinutes() + s) / 60;

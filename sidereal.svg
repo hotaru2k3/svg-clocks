@@ -8,7 +8,8 @@
  <script xlink:href="pos.min.js"/>
  <script>
 (function()
-{ Date.prototype.getJulian = function()
+{ 'use strict';
+  Date.prototype.getJulian = function()
   { return this.getTime() / 86400000 + 2440587.5; }
 
   function update()
@@ -23,7 +24,7 @@
     y -= Math.floor(y);
     var p = (j - 11.283) / 27.321661;
     p -= Math.floor(p);
-    g = 0.77905727325 + 1.002737909350795 * j;
+    var g = 0.77905727325 + 1.002737909350795 * j;
     var h = g + (pos.longitude / 360);
     h -= Math.floor(h);
     var m = h * 24;
