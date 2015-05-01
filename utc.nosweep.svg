@@ -24,7 +24,7 @@
       e.style.display = md[mo] > i ? 'inline' : 'none';
       e.setAttribute('transform', 'rotate(' + a + ' 320 320)'); }
     omo = mo;
-    var p = (d.getDate() - 1 + h) / md[mo];
+    var p = (d.getUTCDate() - 1 + h) / md[mo];
     var y = (mo + p) / 12;
     document.getElementById('ys').innerHTML = yr;
     document.getElementById('y').setAttribute('transform', 'rotate(' + (360 * y) + ' 320 320)');
