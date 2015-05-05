@@ -4,8 +4,13 @@
 
  $s = gmdate('s') / 60;
  $m = (gmdate('i') + $s) / 60;
- $h = (gmdate('G') + $m) / 24;
+ $h = (gmdate('H') + $m) / 24;
  $w = (gmdate('w') + $h) / 7;
+
+ $s *= 360;
+ $m *= 360;
+ $h *= 360;
+ $w *= 360;
 
 ?>
 <svg xmlns="http://www.w3.org/2000/svg"
@@ -96,8 +101,8 @@
     attributeName="transform"
     attributeType="XML"
     type="rotate"
-    from="<?= $w * 360 ?> 320 320"
-    to="<?= 360 + $w * 360 ?> 320 320"
+    from="<?= $w ?> 320 320"
+    to="<?= 360 + $w ?> 320 320"
     dur="168h"
     repeatCount="indefinite"/>
  </line>
@@ -106,8 +111,8 @@
     attributeName="transform"
     attributeType="XML"
     type="rotate"
-    from="<?= $h * 360 ?> 320 320"
-    to="<?= 360 + $h * 360 ?> 320 320"
+    from="<?= $h ?> 320 320"
+    to="<?= 360 + $h ?> 320 320"
     dur="24h"
     repeatCount="indefinite"/>
  </line>
@@ -116,8 +121,8 @@
     attributeName="transform"
     attributeType="XML"
     type="rotate"
-    from="<?= $m * 360 ?> 320 320"
-    to="<?= 360 + $m * 360 ?> 320 320"
+    from="<?= $m ?> 320 320"
+    to="<?= 360 + $m ?> 320 320"
     dur="1h"
     repeatCount="indefinite"/>
  </line>
@@ -126,8 +131,8 @@
     attributeName="transform"
     attributeType="XML"
     type="rotate"
-    from="<?= $s * 360 ?> 320 320"
-    to="<?= 360 + $s * 360 ?> 320 320"
+    from="<?= $s ?> 320 320"
+    to="<?= 360 + $s ?> 320 320"
     dur="60s"
     repeatCount="indefinite"/>
  </line>
